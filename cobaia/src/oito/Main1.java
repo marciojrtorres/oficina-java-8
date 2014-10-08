@@ -97,8 +97,20 @@ public class Main1 {
 	}
 
 	private static List<Filme> filmesClassificados3melhores(List<Filme> filmes) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Filme> melhores = new ArrayList<Filme>(filmes);
+		Collections.sort(melhores, new Comparator<Filme>() {
+			@Override
+			public int compare(Filme o1, Filme o2) {
+				if (o1.getAvaliacao() < o2.getAvaliacao()) {
+					return 1;
+				} else if (o1.getAvaliacao() > o2.getAvaliacao()) {
+					return -1;
+				} else {
+					return 0;
+				}
+			}
+		});
+		return melhores.subList(0, 3);
 	}
 
 	

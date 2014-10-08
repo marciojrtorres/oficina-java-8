@@ -1,5 +1,6 @@
 package oito;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -17,6 +18,8 @@ public class Main2 {
 		// e.setHoraTermino(?) // 19:00
 
 		e.setInicio(new Date("10/16/2014"));
+		
+		System.out.println(LocalDate.of(2014, 12, 25).getMonth().getValue() == 12);
 		
 		// System.out.println(e.getDias()); // 3
 		
@@ -41,6 +44,10 @@ public class Main2 {
 		Calendar c = Calendar.getInstance();
 		System.out.println(c);
 		System.out.println(c.get(Calendar.MONTH) == 8);
+		
+		Date d = new Date("12/25/2014"); 
+		Date d2 = new Date((d.getMonth() + 4 + 1) + "/" + (d.getDate() + 20) + "/" + (d.getYear() + 1905));
+		System.out.println(d2); // + 5 anos, 4 meses e 20 dias
 		
 		
 	}
